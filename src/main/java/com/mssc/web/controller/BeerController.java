@@ -3,6 +3,7 @@ package com.mssc.web.controller;
 import com.mssc.services.BeerService;
 import com.mssc.web.model.BeerDto;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,12 +20,14 @@ import java.util.UUID;
 @RequestMapping("/api/v1/beer")
 @RestController
 @RequiredArgsConstructor
+@Slf4j
 public class BeerController {
 
     private final BeerService beerService;
 
     @GetMapping("/{beerId}")
     public ResponseEntity<BeerDto>getBeer(@PathVariable("beerId") UUID beerId) {
+        log.info(beerId.toString());
         return new ResponseEntity<>(beerService.getBeerById(beerId), HttpStatus.OK);
     }
 
