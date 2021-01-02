@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mssc.services.BeerService;
 import com.mssc.web.model.BeerDto;
+import com.mssc.web.model.BeerStyleEnum;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -45,7 +46,7 @@ public class BeerControllerTest {
         validBeer = BeerDto.builder()
                 .id(UUID.randomUUID())
                 .beerName("Beer1")
-                .beerStyle("Pale_Ale")
+                .beerStyle(BeerStyleEnum.ALE)
                 .upc(12345679L)
                 .build();
     }

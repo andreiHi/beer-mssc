@@ -2,6 +2,7 @@ package com.mssc.services.impl;
 
 import com.mssc.services.BeerService;
 import com.mssc.web.model.BeerDto;
+import com.mssc.web.model.BeerStyleEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ public class BeerServiceImpl implements BeerService {
         return BeerDto.builder()
                 .id(UUID.randomUUID())
                 .beerName("Galaxi Cat!!")
-                .beerStyle("Pale Ale")
+                .beerStyle(BeerStyleEnum.ALE)
                 .build();
 
     }
