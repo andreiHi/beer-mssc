@@ -12,7 +12,7 @@ public class BeerServiceImpl implements BeerService {
     public BeerDto getBeerById(UUID beerId) {
         return BeerDto.builder()
                 .id(UUID.randomUUID())
-                .beerName("Galaxi Cat")
+                .beerName("Galaxi Cat!!")
                 .beerStyle("Pale Ale")
                 .build();
 
@@ -24,4 +24,11 @@ public class BeerServiceImpl implements BeerService {
                 .id(UUID.randomUUID())
                 .build();
     }
+
+    @Override
+    public void updateBeer(String id, BeerDto beerDto) {
+        // todo
+    }
+
+
 }
