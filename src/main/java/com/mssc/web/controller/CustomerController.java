@@ -30,7 +30,8 @@ public class CustomerController {
     @PostMapping
     public ResponseEntity<CustomerDto>createCustomer(@RequestBody CustomerDto customerDto) {
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Location", customerDto.getId().toString());
+        final CustomerDto customer = customerService.createCustomer(customerDto);
+        headers.add("Location", customer.getId().toString());
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
 }
