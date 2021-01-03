@@ -29,7 +29,7 @@ public class BeerServiceImpl implements BeerService {
     }
 
     @Override
-    public void updateBeer(String id, BeerDto beerDto) {
+    public void updateBeer(UUID id, BeerDto beerDto) {
         // todo
     }
 

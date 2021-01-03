@@ -42,7 +42,7 @@ public class BeerController {
     }
 
     @PutMapping("/{beerId}")
-    public ResponseEntity<BeerDto>updateBeer(@PathVariable("beerId")String id, @RequestBody BeerDto beerDto) {
+    public ResponseEntity<BeerDto>updateBeer(@PathVariable("beerId")UUID id, @RequestBody BeerDto beerDto) {
         beerService.updateBeer(id, beerDto);
         return ResponseEntity.noContent().build();
     }
