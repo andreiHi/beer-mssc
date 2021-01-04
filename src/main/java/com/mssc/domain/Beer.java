@@ -49,7 +49,7 @@ public class Beer {
     private BigDecimal price;
 
     private Integer minOnHand;
-    private Integer quantityOnHand;
+    private Integer quantityToBrew;
 
     @Override
     public boolean equals(Object o) {
@@ -64,7 +64,7 @@ public class Beer {
                 && Objects.equals(upc, beer.upc)
                 && Objects.equals(price, beer.price)
                 && Objects.equals(minOnHand, beer.minOnHand)
-                && Objects.equals(quantityOnHand, beer.quantityOnHand);
+                && Objects.equals(quantityToBrew, beer.quantityToBrew);
     }
 
     @Override
@@ -72,7 +72,7 @@ public class Beer {
         return Objects.hash(version, createdDate,
                 lastModifiedDate, beerName,
                 beerStyle, upc, price,
-                minOnHand, quantityOnHand);
+                minOnHand, quantityToBrew);
     }
 
     @Override
@@ -87,7 +87,7 @@ public class Beer {
                 .add("upc=" + upc)
                 .add("price=" + price)
                 .add("minOnHand=" + minOnHand)
-                .add("quantityOnHand=" + quantityOnHand)
+                .add("quantityOnHand=" + quantityToBrew)
                 .toString();
     }
 }
