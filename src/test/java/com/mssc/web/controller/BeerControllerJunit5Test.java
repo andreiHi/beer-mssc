@@ -39,8 +39,8 @@ class BeerControllerJunit5Test {
 
     @Test
     void saveNewBeer() throws Exception {
-        BeerDto beerDto = BeerDto.builder().build();
-        given(beerService.saveBeer(any())).willReturn(BeerDto.builder().id(UUID.randomUUID()).build());
+        BeerDto beerDto = BeerDto.builder().beerName("New Beer").build();
+        given(beerService.saveBeer(any())).willReturn(BeerDto.builder().beerName("New Beer").build());
         final String beerAsJson = objectMapper.writeValueAsString(beerDto);
         mockMvc.perform(post("/api/v1/beer")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -51,9 +51,9 @@ class BeerControllerJunit5Test {
 
     @Test
     void updateBeer() throws Exception {
-        final BeerDto newBeerDto = BeerDto.builder().id(UUID.randomUUID()).beerName("New Beer").build();
+        final BeerDto newBeerDto = BeerDto.builder().beerName("New Beer").build();
         final String beerAsJson = objectMapper.writeValueAsString(newBeerDto);
-        mockMvc.perform(put("/api/v1/beer/" + newBeerDto.getId())
+        mockMvc.perform(put("/api/v1/beer/" + UUID.randomUUID())
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(beerAsJson)
         ).andDo(print())
