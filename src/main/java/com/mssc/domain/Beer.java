@@ -87,7 +87,7 @@ public class Beer {
                 .add("upc=" + upc)
                 .add("price=" + price)
                 .add("minOnHand=" + minOnHand)
-                .add("quantityOnHand=" + quantityToBrew)
+                .add("quantityToBrew=" + quantityToBrew)
                 .toString();
     }
 }
