@@ -6,18 +6,14 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {DateMapper.class})
 public interface BeerMapper {
 
     BeerMapper MAPPER = Mappers.getMapper(BeerMapper.class);
 
-    @Mapping(target = "createdDate", ignore = true)
-    @Mapping(target = "lastModifiedDate", ignore = true)
     BeerDto beerToBeerDto(Beer beer);
 
-    @Mapping(target = "id", ignore = true)
-    @Mapping(target = "version", ignore = true)
-    @Mapping(target = "createdDate", ignore = true)
-    @Mapping(target = "lastModifiedDate", ignore = true)
+//    @Mapping(target = "id", ignore = true)
+//    @Mapping(target = "version", ignore = true)
     Beer beerDtoToBeer(BeerDto beerDto);
 }
